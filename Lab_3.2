@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    
+    int a,s;
+    double f;
+    
+    printf("Введіть значення a =");
+    scanf("%d", &a);
+    
+    printf("Введіть значення s =");
+    scanf("%d", &s);
+    
+    if (s < 0)
+    {
+        f = 2 * s + a * pow (s,2);
+    }
+    else if (s == 0)
+    {
+        f = sqrt (s + a - 15) + 8 * s * a;
+    }
+    else if (s > 0)
+    {
+        f = (12 * s) / (2 * a - 4);
+    }
+    else {
+        printf("Це неможливо!");
+    }
+    
+    printf("f = %.2f" , f);
+    
+    return 0;
+    
+    
+}
