@@ -1,22 +1,28 @@
 #include <stdio.h>
 
 int main() {
-    float radius, side_lenght, circle_area, square_area;
+    float radius, side_length, circle_area, square_area;
     const float pi = 3.14159;
     
-    printf ("Введіть радіус круга: ");
-    scanf ("%f", &radius);
+    printf("Введіть радіус круга: ");
+    if (scanf("%f", &radius) != 1 || radius <= 0) {
+        printf("Неможливо порахувати.\n");
+        return 1;
+    }
     
-    printf ("Введіть довжину сторони квадрата: ");
-    scanf ("%f", &side_lenght);
+    printf("Введіть довжину сторони квадрата: ");
+    if (scanf("%f", &side_length) != 1 || side_length <= 0) {
+        printf("Неможливо порахувати.\n");
+        return 1;
+    }
     
     circle_area = pi * radius * radius;
-    square_area = side_lenght * side_lenght;
+    square_area = side_length * side_length;
     
     if (circle_area <= square_area) {
-        printf ("Круг поміститься у квадраті.");
+        printf("Круг поміститься у квадраті.\n");
     } else {
-        printf ("Круг не поміститься у квадраті.");
+        printf("Круг не поміститься у квадраті.\n");
     }
 
     return 0;
