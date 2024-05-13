@@ -13,8 +13,13 @@ int main(){
     scanf("%d", &s);
     
     if (s < 0) f = 2 * s + a * pow (s,2);
-    if (s == 0) f = sqrt (s + a - 15) + 8 * s * a;
-    if (s > 0) f = (12 * s) / (2 * a - 4);
+    if (s == 0 && a <= 15 ) f = sqrt (s + a - 15) + 8 * s * a;
+    if (s > 0 && a != 2) f = (12 * s) / (2 * a - 4);
+    
+    else {
+        printf("Неможливо виконати операцію");
+        return 1;
+    }
     
     printf("Значення f = %.2f" , f);
     
