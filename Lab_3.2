@@ -12,20 +12,21 @@ int main(){
     printf("Введіть значення s =");
     scanf("%d", &s);
     
-    if (s < 0)
+    if (s < 0) 
     {
-        f = 2 * s + a * pow (s,2);
-    }
-    else if (s == 0)
+        f = 2 * s + a * pow(s, 2);
+    } 
+    else if (s == 0 && a <= 15) 
     {
-        f = sqrt (s + a - 15) + 8 * s * a;
+        f = sqrt(s + a - 15) + 8 * s * a;
     }
-    else if (s > 0)
+    else if (s > 0 && a != 2) 
     {
         f = (12 * s) / (2 * a - 4);
     }
     else {
-        printf("Це неможливо!");
+        printf("Неможливо виконати операцію");
+        return 1; 
     }
     
     printf("f = %.2f" , f);
